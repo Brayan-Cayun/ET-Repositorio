@@ -1,0 +1,46 @@
+def menu():
+    print('''****PYBOOKS****
+1. Stock por marca
+2. Busqueda por precio
+3. Actualizar precio
+0. Salir''')
+def diccionarios():
+    productos = {'8475HD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i5', 'Nvidia GTX1050'], 
+                    '2175HD': ['lenovo', 14, '4GB', 'SSD', '512GB', 'Intel Core i5', 'Nvidia GTX1050'], 
+                    'JJFFHD': ['Asus', 14, '16GB', 'SSD', '256GB', 'Intel Core i7', 'Nvidia RTX2080Ti'], 
+                    'FGDXFHD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i3', 'integrada'], 
+                    'GF75HD': ['Asus', 15.6, '8GB', 'DD', '1T', 'Intel Core i7', 'Nvidia GTX1050'], 
+                    '123FHD': ['lenovo', 14, '6GB', 'DD', '1T', 'AMD Ryzen 5', 'integrada'], 
+                    '342FHD': ['lenovo', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 7', 'Nvidia GTX1050'], 
+                    'UWU131HD': ['Dell', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 3', 'Nvidia GTX1050']}
+    stock = {'8475HD': [387990,10], '2175HD': [327990,4], 'JjfFHD': [424990,1], 
+              'FGDXFHD': [664990,21], '123FHD': [290890,32], '342FHD': [444990,7], 
+              'GF75HD': [749990,2], 'UWU131HD': [349990,1], 'FS1230HD': [249990,0]}
+    while True:
+        try:
+            opc = int(input('Ingrese una opcion: '))
+            if opc == 0:
+                print('Programa finalizado')
+                break
+            elif opc == 1:
+                modelo = input('Ingrese modelo a buscar')
+                for model in productos:
+                    if modelo == model:
+                        print(f'Modelo encontrado, {productos[modelo]}, Precio ${stock[modelo][0]}, Stock disponible {stock[modelo][1]}')
+            elif opc == 2:
+                valor_min = int(input('Ingrese valor minimo'))
+                valor_max = int(input('Ingrese valor maximo'))
+                resultados = []
+                for i in range(valor_min, valor_max):
+                    if i in stock.values():
+                        resultados.append = i
+                        print(f'productos disponibles: {resultados}')
+                        break
+            elif opc == 3:
+                modelo = input('Ingrese modelo a actualizar')
+                precio_nuevo = int(input('Ingrese precio nuevo'))
+                stock[modelo][0] = precio_nuevo
+                print(f'El precio se ha ajustado a {precio_nuevo}') 
+            else:
+                print('Opcion no valida, Intente de nuevo')
+        except ValueError: print('Ingrese un valor valido!')   
