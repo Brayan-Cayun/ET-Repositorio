@@ -1,3 +1,4 @@
+#esto no sirve.
 def menu():
     print('''****PYBOOKS****
 1. Stock por marca
